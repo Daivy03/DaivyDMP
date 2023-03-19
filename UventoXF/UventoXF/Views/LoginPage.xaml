@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="UventoXF.Views.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fonticons="clr-namespace:UventoXF.FontIcons"
+    NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="25">
+            <StackLayout Grid.Row="4">
+                <Image
+                    HorizontalOptions="Center"
+                    Source="demiproflogo"
+                    WidthRequest="300" />
+
+                <Frame
+                    Margin="10"
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    BorderColor="#fff"
+                    CornerRadius="30" />
+                <Frame
+                    Margin="10"
+                    Padding="20,0,25,0"
+                    BackgroundColor="Transparent"
+                    BorderColor="#fff"
+                    CornerRadius="30"
+                    HeightRequest="60">
+                    <Entry
+                        x:Name="EntryEmail"
+                        FontSize="18"
+                        Keyboard="Email"
+                        Placeholder="Email"
+                        PlaceholderColor="white"
+                        Text="{Binding Email}"
+                        TextColor="#fff" />
+
+                </Frame>
+                <Frame
+                    Margin="10"
+                    Padding="20,0,25,0"
+                    BackgroundColor="Transparent"
+                    BorderColor="#fff"
+                    CornerRadius="30"
+                    HeightRequest="60">
+                    <Entry
+                        x:Name="EntryPassword"
+                        FontSize="18"
+                        IsPassword="True"
+                        Placeholder="Password"
+                        PlaceholderColor="white"
+                        Text="{Binding Password}"
+                        TextColor="#fff" />
+
+                </Frame>
+
+                <RelativeLayout Padding="25">
+
+                    <CheckBox
+                        x:Name="Checkbox"
+                        Margin="15,0,0,0"
+                        CheckedChanged="OnShowPasswordCheckboxCheckedChanged"
+                        IsChecked="False"
+                        Color="white" />
+                    <!--  TODO: Aggiungere metodo che controlla il cambio della casella che mostra la password  -->
+
+
+                    <Label
+                        FontSize="18"
+                        RelativeLayout.XConstraint="50"
+                        RelativeLayout.YConstraint="3"
+                        Text="Mostra Password"
+                        TextColor="white" />
+                    <!--  TODO: Aggiungere metodo per recupero della password  -->
+                    <Button
+                        x:Name="PasswordDimenticata"
+                        BackgroundColor="Transparent"
+                        FontFamily="MuliBold"
+                        FontSize="17"
+                        RelativeLayout.XConstraint="205"
+                        RelativeLayout.YConstraint="-8"
+                        Text="Password Dimenticata?"
+                        TextColor="white"
+                        TextTransform="None" />
+                    <!--  Clicked="PasswordDimenticata_Clicked"  -->
+                </RelativeLayout>
+
+                <Button
+                    x:Name="LoginBTN"
+                    Margin="10,0,20,0"
+                    BackgroundColor="#FF6D00"
+                    BorderColor="#FD5A01"
+                    BorderWidth="1"
+                    Clicked="LoginAuth"
+                    CornerRadius="40"
+                    FontFamily="MuliBold"
+                    FontSize="18"
+                    HeightRequest="60"
+                    IsEnabled="{Binding IsLoginEnabled}"
+                    Text="Login"
+                    TextColor="#fff" />
+
+                <Button
+                    x:Name="GLoginBTN"
+                    Margin="10,1,20,10"
+                    Padding="15"
+                    BackgroundColor="#FFF"
+                    BorderColor="#FFF"
+                    BorderWidth="1"
+                    Clicked="btnLogin_Clicked"
+                    CornerRadius="40"
+                    FontFamily="MuliBold"
+                    FontSize="18"
+                    HeightRequest="60"
+                    Text="Login con Google"
+                    TextColor="#000">
+
+
+
+                    <Button.ImageSource>
+
+                        <FileImageSource File="google" />
+
+
+                    </Button.ImageSource>
+
+                </Button>
+
+                <Button
+                    x:Name="RegisterBTN"
+                    Margin="10,0,20,0"
+                    BackgroundColor="#888"
+                    BorderWidth="1"
+                    Clicked="Register_Clicked"
+                    CornerRadius="40"
+                    FontFamily="MuliBold"
+                    FontSize="18"
+                    HeightRequest="60"
+                    Text="SignUp"
+                    TextColor="#fff" />
+
+
+                <!--  TODO Agiungere pagina di registrazione  -->
+
+
+            </StackLayout>
+
+
+
+        </Grid>
+
+    </StackLayout>
+
+
+    <!--<Grid>
+        <Grid Margin="20,15,0,0" ColumnDefinitions="auto, auto">
+            <Label
+                    Grid.Column="0"
+                    FontFamily="MuliBold"
+                    FontSize="16"
+                    TextColor="#FFF"
+                    Text="Login Page" />
+            <Label
+                    Grid.Column="1"
+                    Margin="20,15,0,0"
+                    FontFamily="MaterialIcons"
+                    FontSize="22"
+                    HorizontalTextAlignment="Center"
+                    Text="{x:Static fonticons:FontIcons.Login}"
+                    TextColor="White"
+                    VerticalOptions="FillAndExpand"
+                    VerticalTextAlignment="Center" />
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding NavigateToMainPageCommand}" NumberOfTapsRequired="1" />
+            </Grid.GestureRecognizers>
+        </Grid>
+    </Grid>-->
+
+</ContentPage>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="UventoXF.Views.SearchPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                Text="Cerca Tutor!"
+                VerticalOptions="CenterAndExpand" />
+            <Frame
+                Margin="10,5,10,0"
+                Padding="0"
+                BackgroundColor="white"
+                CornerRadius="5">
+                <SearchBar TextChanged="SearchBar_TextChanged" />
+            </Frame>
+
+
+            <CollectionView ItemsSource="{Binding MyItems}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label HorizontalTextAlignment="Center" Text="{Binding .}" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

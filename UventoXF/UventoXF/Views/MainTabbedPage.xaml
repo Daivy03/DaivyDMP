@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage
+    x:Class="UventoXF.Views.MainTabbedPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Core"
+    xmlns:local="clr-namespace:UventoXF.Views"
+    android:TabbedPage.IsSwipePagingEnabled="False"
+    android:TabbedPage.ToolbarPlacement="Bottom"
+    BackgroundColor="#101010"
+    NavigationPage.HasNavigationBar="False"
+    SelectedTabColor="#ff6d00"
+    UnselectedTabColor="white">
+    <!--  Pages can be added as references or inline  -->
+    <local:MainPage Title="Home">
+        <local:MainPage.IconImageSource>
+            <FileImageSource File="home.png" />
+        </local:MainPage.IconImageSource>
+    </local:MainPage>
+    <local:SearchPage Title="Cerca">
+        <local:SearchPage.IconImageSource>
+            <FileImageSource File="search.png" />
+        </local:SearchPage.IconImageSource>
+    </local:SearchPage>
+    <local:Profile Title="Profilo">
+        <local:Profile.IconImageSource>
+            <FileImageSource File="personCircle.png" />
+        </local:Profile.IconImageSource>
+    </local:Profile>
+
+</TabbedPage>
